@@ -1,6 +1,22 @@
 let userChosen = null
 let computerChosen = null
 var result = results()
+const displayResult = document.getElementById('result')
+const computerChoice = document.getElementById('computer-choice')
+const randomNumber = Math.round(Math.Random()*(3))
+const userChoice =document.getElementById('user-choice')
+
+
+function generatedComputerChoice(){
+  if (randomNumber === 1){
+    return computerChosen = 'rock'
+  }else if (randomNumber === 2){
+    return computerChosen = 'paper'
+  }else if(randomNumber === 3){
+    return computerChosen = 'scissor'
+  }
+}
+
 
 function results()
 {
