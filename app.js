@@ -3,9 +3,18 @@ let computerChosen = null
 var result = results()
 const displayResult = document.getElementById('result')
 const computerChoice = document.getElementById('computer-choice')
-const randomNumber = Math.round(Math.Random()*(3))
-const userChoice =document.getElementById('user-choice')
+const randomNumber = Math.round(Math.random()*(3))
+const userChoice = document.getElementById('user-choice')
+const possibleChoices = document.querySelectorAll('.choices')
 
+possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+  userChosen = e.target.id
+  generatedComputerChoice()
+  results()
+  userChoice.innerHTML =userChosen
+  computerChoice.innerHTML = computerChosen
+  displayResult.innerHTML = result
+}))
 
 function generatedComputerChoice(){
   if (randomNumber === 1){
